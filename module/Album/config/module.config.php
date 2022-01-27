@@ -2,14 +2,9 @@
 
 namespace Album;
 
-use Laminas\ServiceManager\Factory\InvokableFactory;
+use Laminas\Router\Http\Segment;
 
 return [
-    'controllers' => [
-        'factories' => [
-            Controller\AlbumController::class => InvokableFactory::class,
-        ],
-    ],
     'router' => [
         'routes' => [
             'album' => [
