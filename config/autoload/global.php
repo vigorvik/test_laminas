@@ -15,6 +15,6 @@
 return [
     'db' => [
         'driver' => 'Pdo',
-        'dsn'    => 'mysql:dbname=laminastutorial;host=localhost;charset=utf8',
+        'dsn'    => 'mysql:dbname=hearthstone;host=localhost;charset=utf8',
     ],
 ];

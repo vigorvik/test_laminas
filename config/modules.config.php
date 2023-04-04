@@ -18,4 +18,5 @@ return [
     'Laminas\Validator',
     'Application',
     'Album',
+    'Hearthstone',
 ];

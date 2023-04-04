@@ -1,0 +1,225 @@
+<?php
+$title = 'Add new card';
+$this->headTitle($title);
+
+use Hearthstone\Form\CardForm; ?>
+    <h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+
+// This provides a default CSS class and placeholder text for the id element:
+/** @var CardForm $form */
+$cardId = $form->get('id');
+$cardId->setAttribute('class', 'form-control');
+$cardId->setAttribute('placeholder', 'Идентификатор карты');
+
+// This provides a default CSS class and placeholder text for the name element:
+$cardName = $form->get('name');
+$cardName->setAttribute('class', 'form-control');
+$cardName->setAttribute('placeholder', 'Наименование карты');
+
+// This provides a default CSS class and placeholder text for the text element:
+$cardText = $form->get('text');
+$cardText->setAttribute('class', 'form-control');
+$cardText->setAttribute('placeholder', 'Описание способностей карты');
+
+// This provides a default CSS class and placeholder text for the flavor text element:
+$cardFlavorText = $form->get('flavor_text');
+$cardFlavorText->setAttribute('class', 'form-control');
+$cardFlavorText->setAttribute('placeholder', 'Слоган');
+
+// This provides a default CSS class and placeholder text for the artist name element:
+$artistName = $form->get('artist_name');
+$artistName->setAttribute('class', 'form-control');
+$artistName->setAttribute('placeholder', 'Имя художника карты');
+
+// This provides a default CSS class and placeholder text for the card type text element:
+$cardTypeId = $form->get('card_type_id');
+$cardTypeId->setAttribute('class', 'form-control');
+$cardTypeId->setAttribute('placeholder', 'Идентификатор типа карты');
+
+// This provides a default CSS class and placeholder text for the minion type element:
+$minionTypeId = $form->get('minion_type_id');
+$minionTypeId->setAttribute('class', 'form-control');
+$minionTypeId->setAttribute('placeholder', 'Идентификатор типа существа');
+
+// This provides a default CSS class and placeholder text for the spell school element:
+$spellSchoolId = $form->get('spell_school_id');
+$spellSchoolId->setAttribute('class', 'form-control');
+$spellSchoolId->setAttribute('placeholder', 'Идентификатор школы заклинаний');
+
+// This provides a default CSS class and placeholder text for the rarity element:
+$rarityId = $form->get('rarity_id');
+$rarityId->setAttribute('class', 'form-control');
+$rarityId->setAttribute('placeholder', 'Идентификатор редкости карты');
+
+// This provides a default CSS class and placeholder text for the card Set Id element:
+$cardSetId = $form->get('card_set_id');
+$cardSetId->setAttribute('class', 'form-control');
+$cardSetId->setAttribute('placeholder', 'Идентификатор набора карт');
+
+// This provides a default CSS class and placeholder text for the card class Id element:
+$classId = $form->get('class_id');
+$classId->setAttribute('class', 'form-control');
+$classId->setAttribute('placeholder', 'Идентификатор класса героя');
+
+// This provides a default CSS class and placeholder text for the card health element:
+$health = $form->get('health');
+$health->setAttribute('class', 'form-control');
+$health->setAttribute('placeholder', 'Показатель здоровья карты');
+
+// This provides a default CSS class and placeholder text for the card attack element:
+$attack = $form->get('attack');
+$attack->setAttribute('class', 'form-control');
+$attack->setAttribute('placeholder', 'Показатель атаки карты');
+
+// This provides a default CSS class and placeholder text for the card durability element:
+$durability = $form->get('durability');
+$durability->setAttribute('class', 'form-control');
+$durability->setAttribute('placeholder', 'Показатель прочности карты');
+
+// This provides a default CSS class and placeholder text for the card mana cost element:
+$manaCost = $form->get('mana_cost');
+$manaCost->setAttribute('class', 'form-control');
+$manaCost->setAttribute('placeholder', 'Стоимосить маны');
+
+// This provides a default CSS class and placeholder text for the collectible element:
+$collectible = $form->get('collectible');
+$collectible->setAttribute('class', 'form-control');
+$collectible->setAttribute('placeholder', 'Коллекционная');
+
+// This provides a default CSS class and placeholder text for the slug element:
+$slug = $form->get('slug');
+$slug->setAttribute('class', 'form-control');
+$slug->setAttribute('placeholder', 'slug');
+
+// This provides a default CSS class and placeholder text for the image element:
+$image = $form->get('image');
+$image->setAttribute('class', 'form-control');
+$image->setAttribute('placeholder', 'Имя файла с изображением карты');
+
+// This provides a default CSS class and placeholder text for the crop_image element:
+$cropImage = $form->get('crop_image');
+$cropImage->setAttribute('class', 'form-control');
+$cropImage->setAttribute('placeholder', 'Имя файла с обрезанным изображением карты');
+
+// This provides a default CSS class and placeholder text for the copy_of_card_id element:
+$copyOfCardId = $form->get('copy_of_card_id');
+$copyOfCardId->setAttribute('class', 'form-control');
+$copyOfCardId->setAttribute('placeholder', 'Идентификатор копии карты');
+
+
+// This provides CSS classes for the submit button:
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('card', ['action' => 'add']));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+<?php // Wrap the elements in divs marked as form groups, and render the
+// label, element, and errors separately within ?>
+    <div class="form-group">
+        <?= $this->formElement($cardId) ?>
+        <?= $this->formElementErrors()->render($cardId, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($cardName) ?>
+        <?= $this->formElementErrors()->render($cardName, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($cardText) ?>
+        <?= $this->formElementErrors()->render($cardText, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($cardFlavorText) ?>
+        <?= $this->formElementErrors()->render($cardFlavorText, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($artistName) ?>
+        <?= $this->formElementErrors()->render($artistName, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($cardTypeId) ?>
+        <?= $this->formElementErrors()->render($cardTypeId, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($minionTypeId) ?>
+        <?= $this->formElementErrors()->render($minionTypeId, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($spellSchoolId) ?>
+        <?= $this->formElementErrors()->render($spellSchoolId, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($rarityId) ?>
+        <?= $this->formElementErrors()->render($rarityId, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($cardSetId) ?>
+        <?= $this->formElementErrors()->render($cardSetId, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($classId) ?>
+        <?= $this->formElementErrors()->render($classId, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($health) ?>
+        <?= $this->formElementErrors()->render($health, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($attack) ?>
+        <?= $this->formElementErrors()->render($attack, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($durability) ?>
+        <?= $this->formElementErrors()->render($durability, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($manaCost) ?>
+        <?= $this->formElementErrors()->render($manaCost, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($collectible) ?>
+        <?= $this->formElementErrors()->render($collectible, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+        <?= $this->formElement($slug) ?>
+        <?= $this->formElementErrors()->render($slug, ['class' => 'help-block']) ?>
+    </div>
+
+     <div class="form-group">
+        <?= $this->formElement($image) ?>
+        <?= $this->formElementErrors()->render($image, ['class' => 'help-block']) ?>
+    </div>
+
+     <div class="form-group">
+        <?= $this->formElement($cropImage) ?>
+        <?= $this->formElementErrors()->render($cropImage, ['class' => 'help-block']) ?>
+    </div>
+
+     <div class="form-group">
+        <?= $this->formElement($copyOfCardId) ?>
+        <?= $this->formElementErrors()->render($copyOfCardId, ['class' => 'help-block']) ?>
+    </div>
+
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->form()->closeTag();

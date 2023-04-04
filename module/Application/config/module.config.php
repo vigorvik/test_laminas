@@ -13,7 +13,7 @@ namespace Application;
 use Laminas\Router\Http\Literal;
 use Laminas\Router\Http\Segment;
 use Laminas\ServiceManager\Factory\InvokableFactory;
-use Album\Controller\AlbumController;
+use Hearthstone\Controller\CardController;
 
 return [
     'router' => [
@@ -23,7 +23,7 @@ return [
                 'options' => [
                     'route' => '/',
                     'defaults' => [
-                        'controller' => AlbumController::class, // <-- change here
+                        'controller' => CardController::class,
                         'action' => 'index',
                     ],
                 ],

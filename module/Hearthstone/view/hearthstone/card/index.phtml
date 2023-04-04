@@ -1,0 +1,29 @@
+<?php
+// module/Card/view/hearthstone/card/index.phtml:
+
+$title = 'Cards';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('card', ['action' => 'add']) ?>">Add new card</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Flavor Name</th>
+        <th>&nbsp;</th>
+    </tr>
+
+    <?php foreach ($cards as $card) : ?>
+        <tr>
+            <td><?= $this->escapeHtml($card->name) ?></td>
+            <td><?= $this->escapeHtml($card->flavorText) ?></td>
+            <td>
+                <a href="<?= $this->url('card', ['action' => 'edit', 'id' => $card->id]) ?>">Edit</a>
+                <a href="<?= $this->url('card', ['action' => 'delete', 'id' => $card->id]) ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
